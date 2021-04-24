@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar color="warning">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/group8/tabs/category"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{categoryDetail.title}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-img [src]="categoryDetail.imageUrl"></ion-img>
+            </ion-col>
+        </ion-row>
+
+        <h2>{{categoryDetail.title}} description:</h2>
+        <p>
+            <br>{{categoryDetail.description}}
+        </p>
+        <ion-list>
+            <ion-item *ngFor="let categorie of categoryDetail.courses" [routerLink]="['./',categorie.id]">
+                <ion-thumbnail slot="start">
+                    <ion-img [src]="categorie.imageUrl"></ion-img>
+                </ion-thumbnail>
+                <ion-label>
+                    <h2>{{categorie.title}}</h2>
+                    <br>
+                    <p>{{categorie.description}}</p>
+                </ion-label>
+            </ion-item>
+        </ion-list>
+
+    </ion-grid>
+</ion-content>

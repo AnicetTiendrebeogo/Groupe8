@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LocalStorageService } from './group8/note/local-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(private localStorageService: LocalStorageService) {}
+  ngOnInit(): void {
+    const newNote = 'new todo';
+   // this.localStorageService.storeOnLocalStorage(newNote);
+}
 }

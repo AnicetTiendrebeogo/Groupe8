@@ -2,14 +2,19 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
+
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'group8',
     pathMatch: 'full'
+  },
+  {
+    path: 'group8',
+    loadChildren: () => import('./group8/group8.module').then( m => m.Group8PageModule)
+  },
+  {
+    path: 'stat',
+    loadChildren: () => import('./stat/stat.module').then( m => m.StatPageModule)
   },
 ];
 
